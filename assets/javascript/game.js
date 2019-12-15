@@ -1,19 +1,19 @@
 const wordList = [
     {
         spelling: "ENTER SANDMAN",
-        media: '<iframe src="https://www.youtube.com/embed/CD-E-LDc384?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/CD-E-LDc384?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "TECH TRIUMPH",
-        media: '<iframe src="https://www.youtube.com/embed/2NDdc4xYKX8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2NDdc4xYKX8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "GOBBLER",
-        media: '<iframe src="https://www.youtube.com/embed/9Mb90E-jxPY?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/9Mb90E-jxPY?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "LETS GO",
-        media: '<iframe src="https://www.youtube.com/embed/2i6Db1mSYI0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2i6Db1mSYI0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     }
 ];
 
@@ -30,7 +30,7 @@ let wins = 0;
 
 function renderWord() {
     //if the guessCount is 0, then it's a new game
-    if(guess.guessCount === 0){
+    if (guess.guessCount === 0) {
         guess.wordArray = wordList[wordIndex].spelling.replace(/[A-Z]/g, '_').split('');
     }
     document.querySelector("#current-word").innerHTML = guess.wordArray.join('');
@@ -41,13 +41,13 @@ function updateScore() {
     document.querySelector("#win-count").innerHTML = wins;
 }
 
-function updateGuessCount(){
+function updateGuessCount() {
     document.querySelector("#guess-remaining").innerHTML = guess.guessRemaining;
 }
-function updateGuessLetters(letter){
+function updateGuessLetters(letter) {
     document.querySelector("#letters-guessed").innerHTML += " " + letter;
 }
-function resetGame(){
+function resetGame() {
     guess.guessCount = 0;
     guess.guessRemaining = 15;
     guess.lettersGuessed = [];
@@ -56,12 +56,12 @@ function resetGame(){
     document.querySelector("#letters-guessed").innerHTML = "";
     updateScore();
 }
-function checkWin(){
-    if(!guess.wordArray.includes("_")){
+function checkWin() {
+    if (!guess.wordArray.includes("_")) {
         document.querySelector("#song").innerHTML = wordList[wordIndex].media;
         wins++;
         wordIndex++;
-        
+
         resetGame();
     }
 }
@@ -92,14 +92,14 @@ document.onkeyup = function (event) {
             guess.lettersGuessed.push(keyPress);
             updateGuessCount();
             updateGuessLetters(keyPress);
-            
-            var word =  wordList[wordIndex].spelling.split('');
-            word.forEach(function(wordLetters, index){
-                if(wordLetters === keyPress){
+
+            var word = wordList[wordIndex].spelling.split('');
+            word.forEach(function (wordLetters, index) {
+                if (wordLetters === keyPress) {
                     guess.wordArray[index] = keyPress;
                 }
             });
-            
+
             checkWin();
             renderWord();
         }
