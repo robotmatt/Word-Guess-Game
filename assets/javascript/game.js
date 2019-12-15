@@ -1,22 +1,27 @@
 const wordList = [
     {
         spelling: "ENTER SANDMAN",
+        desctiption: "Enter Sandman by Metallica",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/CD-E-LDc384?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "TECH TRIUMPH",
+        desctiption: "Tech Triumph Fight Song",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2NDdc4xYKX8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "GOBBLER",
+        desctiption: "Army of Turkeys",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/9Mb90E-jxPY?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "LETS GO",
+        desctiption: "Let's Go Chant",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2i6Db1mSYI0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "STICK IT IN",
+        desctiption: "Stick it in, Sitck it in, Sitck it in",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/RcLILCU6AVU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     }
 ];
@@ -63,6 +68,7 @@ function resetGame() {
 function checkWin() {
     if (!guess.wordArray.includes("_")) {
         document.querySelector("#song").innerHTML = wordList[wordIndex].media;
+        document.querySelector("#description").innerHTML = wordList[wordIndex].description;
         wins++;
         wordIndex++;
 
