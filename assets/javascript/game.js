@@ -93,21 +93,26 @@ document.onkeyup = function (event) {
 
     console.log(keyPress);
 
-    if (!guess.lettersGuessed.includes(keyPress)) {
-        guess.guessCount++;
-        guess.guessRemaining--;
-        guess.lettersGuessed.push(keyPress);
-        updateGuessCount();
-        updateGuessLetters(keyPress);
-
-        var word = wordList[wordIndex].spelling.split('');
-        word.forEach(function (wordLetters, index) {
-            if (wordLetters === keyPress) {
-                guess.wordArray[index] = keyPress;
-            }
-        });
-
-        checkWin();
-        renderWord();
+    if(guess.guessRemaining > 0){
+        if (!guess.lettersGuessed.includes(keyPress)) {
+            guess.guessCount++;
+            guess.guessRemaining--;
+            guess.lettersGuessed.push(keyPress);
+            updateGuessCount();
+            updateGuessLetters(keyPress);
+    
+            var word = wordList[wordIndex].spelling.split('');
+            word.forEach(function (wordLetters, index) {
+                if (wordLetters === keyPress) {
+                    guess.wordArray[index] = keyPress;
+                }
+            });
+    
+            checkWin();
+            renderWord();
+        }
+    } else{
+        //you lose!!
     }
+    
 };
