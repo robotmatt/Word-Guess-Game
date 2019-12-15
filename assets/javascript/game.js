@@ -15,14 +15,14 @@ const wordList = [
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2NDdc4xYKX8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
-        spelling: "GOBBLER",
-        description: "Army of Turkeys",
-        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/Q9zvgcOrTtw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    },
-    {
         spelling: "STICK IT IN",
         description: "Stick it in, Sitck it in, Sitck it in",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/RcLILCU6AVU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    },
+    {
+        spelling: "GOBBLER",
+        description: "Army of Turkeys",
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/Q9zvgcOrTtw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     }
 ];
 
@@ -90,29 +90,39 @@ updateGuessCount();
 document.onkeyup = function (event) {
     // Captures the key press, converts it to lowercase, and saves it to a variable.
     let keyPress = event.key.toUpperCase();
-
     console.log(keyPress);
 
-    if(guess.guessRemaining > 0){
-        if (!guess.lettersGuessed.includes(keyPress)) {
-            guess.guessCount++;
-            guess.guessRemaining--;
-            guess.lettersGuessed.push(keyPress);
-            updateGuessCount();
-            updateGuessLetters(keyPress);
-    
-            var word = wordList[wordIndex].spelling.split('');
-            word.forEach(function (wordLetters, index) {
-                if (wordLetters === keyPress) {
-                    guess.wordArray[index] = keyPress;
-                }
-            });
-    
-            checkWin();
-            renderWord();
-        }
-    } else{
-        //you lose!!
+    //ignore non alphabet characters
+    var regex = new RegExp("^[a-zA-Z\b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
     }
-    
+    else {
+        if (guess.guessRemaining > 0) {
+            if (!guess.lettersGuessed.includes(keyPress)) {
+                guess.guessCount++;
+                guess.guessRemaining--;
+                guess.lettersGuessed.push(keyPress);
+                updateGuessCount();
+                updateGuessLetters(keyPress);
+
+                var word = wordList[wordIndex].spelling.split('');
+                word.forEach(function (wordLetters, index) {
+                    if (wordLetters === keyPress) {
+                        guess.wordArray[index] = keyPress;
+                    }
+                });
+
+                checkWin();
+                renderWord();
+            }
+        } else {
+            //you lose!!
+        }
+    }
+
+
+
 };
