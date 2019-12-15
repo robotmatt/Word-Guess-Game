@@ -1,15 +1,19 @@
 const wordList = [
     {
         spelling: "ENTER SANDMAN",
-        media: null
+        media: '<iframe src="https://www.youtube.com/embed/CD-E-LDc384?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "TECH TRIUMPH",
-        media: null
+        media: '<iframe src="https://www.youtube.com/embed/2NDdc4xYKX8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "GOBBLER",
-        media: null
+        media: '<iframe src="https://www.youtube.com/embed/9Mb90E-jxPY?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    },
+    {
+        spelling: "LETS GO",
+        media: '<iframe src="https://www.youtube.com/embed/2i6Db1mSYI0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     }
 ];
 
@@ -54,8 +58,10 @@ function resetGame(){
 }
 function checkWin(){
     if(!guess.wordArray.includes("_")){
+        document.querySelector("#song").innerHTML = wordList[wordIndex].media;
         wins++;
         wordIndex++;
+        
         resetGame();
     }
 }
