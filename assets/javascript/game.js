@@ -17,7 +17,7 @@ const wordList = [
     {
         spelling: "GOBBLER",
         description: "Army of Turkeys",
-        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/9Mb90E-jxPY?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/Q9zvgcOrTtw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "STICK IT IN",
@@ -93,21 +93,21 @@ document.onkeyup = function (event) {
 
     console.log(keyPress);
 
-        if (!guess.lettersGuessed.includes(keyPress)) {
-            guess.guessCount++;
-            guess.guessRemaining--;
-            guess.lettersGuessed.push(keyPress);
-            updateGuessCount();
-            updateGuessLetters(keyPress);
+    if (!guess.lettersGuessed.includes(keyPress)) {
+        guess.guessCount++;
+        guess.guessRemaining--;
+        guess.lettersGuessed.push(keyPress);
+        updateGuessCount();
+        updateGuessLetters(keyPress);
 
-            var word = wordList[wordIndex].spelling.split('');
-            word.forEach(function (wordLetters, index) {
-                if (wordLetters === keyPress) {
-                    guess.wordArray[index] = keyPress;
-                }
-            });
+        var word = wordList[wordIndex].spelling.split('');
+        word.forEach(function (wordLetters, index) {
+            if (wordLetters === keyPress) {
+                guess.wordArray[index] = keyPress;
+            }
+        });
 
-            checkWin();
-            renderWord();
-        }
+        checkWin();
+        renderWord();
+    }
 };

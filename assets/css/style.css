@@ -1,5 +1,5 @@
 h1{
-    font-family: 'Virginia Tech Nameplate', sans-serif;
+    font-family: 'Anton', sans-serif;
     font-size: 4.5rem;
     font-weight: 400;
     font-style: normal;
@@ -7,17 +7,41 @@ h1{
     position: relative;
     margin: 0;
     padding: 8px 0 14px 0;
-    color: #630031;
+    text-transform: uppercase;
+    text-shadow: 
+    -1px -1px 1px #111, 
+    2px 2px 1px #363636;
+    letter-spacing: .1em;
+}
+h2#rotate{
+    transform: rotate(-20deg);
+    font-family: 'Anton', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1;
+    position: relative;
+    margin-left: -220px;
+    margin-top: -20px;
+    padding: 8px 0 14px 0;
+    text-transform: uppercase;
+    text-shadow: 
+    -1px -1px 1px #111, 
+    2px 2px 1px #363636;
+    letter-spacing: .1em;
+    color: white;
 }
 
 body{
     margin: 0 auto;
     width: 960px;
     text-align: center;
+    color: #cf4420;
+    background-color: #630031;
 }
 .container {
     margin: 0 auto;
-    width: 600px;
+    width: 700px;
 }
 .push {
     height: 50px;
@@ -33,7 +57,7 @@ footer {
 .game-box{
     float: left;
     border: 2px solid;
-    border-color: red;
+    border-color: #cf4420;
     width: 49%;
     height: 500px;
 }
