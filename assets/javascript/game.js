@@ -93,9 +93,6 @@ document.onkeyup = function (event) {
 
     console.log(keyPress);
 
-    if (guess.guessCount === 0 && wins === 0) {
-        guess.guessCount++;
-    } else {
         if (!guess.lettersGuessed.includes(keyPress)) {
             guess.guessCount++;
             guess.guessRemaining--;
@@ -113,6 +110,4 @@ document.onkeyup = function (event) {
             checkWin();
             renderWord();
         }
-
-    }
 };
