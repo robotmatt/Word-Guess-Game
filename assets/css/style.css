@@ -38,6 +38,7 @@ body{
     text-align: center;
     color: #cf4420;
     background-color: #630031;
+    font-family: 'Anton', sans-serif;
 }
 .container {
     margin: 0 auto;
@@ -60,4 +61,10 @@ footer {
     border-color: #cf4420;
     width: 49%;
     height: 500px;
+}
+
+.game-text{
+    margin: 5px;
+    padding: 15px;
+    font-size: 1.5em;
 }
