@@ -43,6 +43,22 @@ function updateGuessCount(){
 function updateGuessLetters(letter){
     document.querySelector("#letters-guessed").innerHTML += " " + letter;
 }
+function resetGame(){
+    guess.guessCount = 0;
+    guess.guessRemaining = 15;
+    guess.lettersGuessed = [];
+    guess.wordArray = [];
+    updateGuessCount();
+    document.querySelector("#letters-guessed").innerHTML = "";
+    updateScore();
+}
+function checkWin(){
+    if(!guess.wordArray.includes("_")){
+        wins++;
+        wordIndex++;
+        resetGame();
+    }
+}
 
 
 
@@ -60,8 +76,8 @@ document.onkeyup = function (event) {
     let keyPress = event.key.toUpperCase();
 
     console.log(keyPress);
-    
-    if (guess.guessCount === 0) {
+
+    if (guess.guessCount === 0 && wins === 0) {
         guess.guessCount++;
     } else {
         if (!guess.lettersGuessed.includes(keyPress)) {
@@ -77,9 +93,9 @@ document.onkeyup = function (event) {
                     guess.wordArray[index] = keyPress;
                 }
             });
-
-            renderWord();
             
+            checkWin();
+            renderWord();
         }
 
     }
