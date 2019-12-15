@@ -2,27 +2,32 @@ const wordList = [
     {
         spelling: "LETS GO",
         description: "Let's Go Chant",
-        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2i6Db1mSYI0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2i6Db1mSYI0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        image: '<img src="assets/images/lets-go-hokes.jpg">'
     },
     {
         spelling: "ENTER SANDMAN",
         description: "Enter Sandman by Metallica",
-        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/CD-E-LDc384?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/CD-E-LDc384?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        image: null
     },
     {
         spelling: "TECH TRIUMPH",
         description: "Tech Triumph Fight Song",
-        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2NDdc4xYKX8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2NDdc4xYKX8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        image: null
     },
     {
         spelling: "STICK IT IN",
         description: "Stick it in, Sitck it in, Sitck it in",
-        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/RcLILCU6AVU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/RcLILCU6AVU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        image: null
     },
     {
         spelling: "GOBBLER",
         description: "Army of Turkeys",
-        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/Q9zvgcOrTtw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/Q9zvgcOrTtw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        image: null
     }
 ];
 
@@ -68,6 +73,7 @@ function resetGame() {
 function checkWin() {
     if (!guess.wordArray.includes("_")) {
         document.querySelector("#song").innerHTML = wordList[wordIndex].media;
+        document.querySelector("#image").innerHTML = wordList[wordIndex].image;
         document.querySelector("#description").innerHTML = wordList[wordIndex].description;
         wins++;
         wordIndex++;
