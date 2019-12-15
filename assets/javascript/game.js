@@ -16,7 +16,8 @@ const wordList = [
 let guess = {
     guessCount: 0,
     guessRemaining: 15,
-    letters: []
+    lettersGuessed: [],
+    wordArray: []
 };
 
 let wordIndex = 0;
@@ -24,15 +25,11 @@ let wordIndex = 0;
 let wins = 0;
 
 function renderWord() {
-    // If there are still more questions, render the next one.
-    if (wordIndex <= (wordList.length - 1)) {
-        document.querySelector("#current-word").innerHTML = wordList[wordIndex].spelling.replace(/[A-Z]/g, '_');
+    //if the guessCount is 0, then it's a new game
+    if(guess.guessCount === 0){
+        guess.wordArray = wordList[wordIndex].spelling.replace(/[A-Z]/g, '_').split('');
     }
-    // If there aren't, render the end game screen.
-    else {
-        document.querySelector("#question").innerHTML = "Game Over!";
-        document.querySelector("#score").innerHTML = "Final Score: " + wins + " out of " + wordList.length;
-    }
+    document.querySelector("#current-word").innerHTML = guess.wordArray.join('');
 }
 
 // Function that updates the score...
@@ -47,9 +44,7 @@ function updateGuessLetters(letter){
     document.querySelector("#letters-guessed").innerHTML += " " + letter;
 }
 
-function checkLetter(word, letter){
-    
-}
+
 
 
 // MAIN PROCESS
@@ -64,16 +59,27 @@ document.onkeyup = function (event) {
     // Captures the key press, converts it to lowercase, and saves it to a variable.
     let keyPress = event.key.toUpperCase();
 
+    console.log(keyPress);
+    
     if (guess.guessCount === 0) {
         guess.guessCount++;
     } else {
-        if (!guess.letters.includes(keyPress)) {
+        if (!guess.lettersGuessed.includes(keyPress)) {
             guess.guessCount++;
             guess.guessRemaining--;
+            guess.lettersGuessed.push(keyPress);
             updateGuessCount();
-            guess.letters.push(keyPress);
-            console.log(keyPress);
             updateGuessLetters(keyPress);
+            
+            var word =  wordList[wordIndex].spelling.split('');
+            word.forEach(function(wordLetters, index){
+                if(wordLetters === keyPress){
+                    guess.wordArray[index] = keyPress;
+                }
+            });
+
+            renderWord();
+            
         }
 
     }
