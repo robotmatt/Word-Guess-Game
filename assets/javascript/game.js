@@ -1,27 +1,27 @@
 const wordList = [
     {
+        spelling: "LETS GO",
+        description: "Let's Go Chant",
+        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2i6Db1mSYI0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    },
+    {
         spelling: "ENTER SANDMAN",
-        desctiption: "Enter Sandman by Metallica",
+        description: "Enter Sandman by Metallica",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/CD-E-LDc384?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "TECH TRIUMPH",
-        desctiption: "Tech Triumph Fight Song",
+        description: "Tech Triumph Fight Song",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2NDdc4xYKX8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
         spelling: "GOBBLER",
-        desctiption: "Army of Turkeys",
+        description: "Army of Turkeys",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/9Mb90E-jxPY?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
     {
-        spelling: "LETS GO",
-        desctiption: "Let's Go Chant",
-        media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2i6Db1mSYI0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    },
-    {
         spelling: "STICK IT IN",
-        desctiption: "Stick it in, Sitck it in, Sitck it in",
+        description: "Stick it in, Sitck it in, Sitck it in",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/RcLILCU6AVU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     }
 ];
