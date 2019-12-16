@@ -70,7 +70,7 @@ function resetGame() {
     document.querySelector("#letters-guessed").innerHTML = "";
     updateScore();
 }
-function checkWin() {
+function checkCorrect() {
     if (!guess.wordArray.includes("_")) {
         document.querySelector("#song").innerHTML = wordList[wordIndex].media;
         document.querySelector("#image").innerHTML = wordList[wordIndex].image;
@@ -80,6 +80,12 @@ function checkWin() {
         wordIndex++;
 
         resetGame();
+
+        //End of game, make the turkeys fly
+        if(wins === wordList.length){
+            console.log("WINNER");
+            document.querySelector("#get-started").innerHTML = "YOU WON! Refresh to play again.";
+        }
     }
 }
 
@@ -122,11 +128,13 @@ document.onkeyup = function (event) {
                     }
                 });
                 
-                checkWin();
+                checkCorrect();
                 renderWord();
             }
         } else {
             //you lose!!
+            document.querySelector("#get-started").innerHTML = "YOU LOST! Refresh to play again.";
+            document.querySelector("#image").innerHTML = '<img src="assets/images/loser.gif">';
         }
     }
 
