@@ -32,6 +32,7 @@ h2#rotate{
     2px 2px 1px #363636;
     letter-spacing: .1em;
     color: white;
+    z-index: -1;
 }
 
 body{
