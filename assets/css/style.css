@@ -62,13 +62,14 @@ footer {
     border: 2px solid;
     border-color: #cf4420;
     width: 49%;
-    height: 500px;
+    height: 410px;
 }
 
 .game-text{
     margin: 5px;
     padding: 15px;
     font-size: 1.5em;
+    letter-spacing: .08em;
 }
 
 #image img{
