@@ -112,7 +112,7 @@ document.onkeyup = function (event) {
         event.preventDefault();
         return false;
     }
-    else {
+    else if (wins != wordList.length) {
         if (guess.guessRemaining > 0) {
             if (!guess.lettersGuessed.includes(keyPress)) {
                 guess.guessCount++;
