@@ -9,25 +9,25 @@ const wordList = [
         spelling: "ENTER SANDMAN",
         description: "Enter Sandman by Metallica",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/CD-E-LDc384?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        image: null
+        image: '<img src="assets/images/entersandman.jpg">'
     },
     {
         spelling: "TECH TRIUMPH",
         description: "Tech Triumph Fight Song",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/2NDdc4xYKX8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        image: null
+        image: '<img src="assets/images/techtriumph.jpg">'
     },
     {
         spelling: "STICK IT IN",
         description: "Stick it in, Sitck it in, Sitck it in",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/RcLILCU6AVU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        image: null
+        image: '<img src="assets/images/stickitin.jpg">'
     },
     {
         spelling: "GOBBLER",
         description: "Army of Turkeys",
         media: '<iframe width="1" height="1" src="https://www.youtube.com/embed/Q9zvgcOrTtw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        image: null
+        image: '<img src="assets/images/turkey.png">'
     }
 ];
 
