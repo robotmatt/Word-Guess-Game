@@ -47,7 +47,7 @@ body{
     width: 800px;
 }
 .push {
-    height: 40px;
+    height: 20px;
 }
 footer {
     width: 100%;
@@ -75,4 +75,10 @@ footer {
     width: 90%;
     position: relative;
     padding: 10px;
+}
+
+#description{
+    margin-bottom: 10px;
+    font-family: 'Good Times', sans-serif;
+    font-size: 2em;
 }
