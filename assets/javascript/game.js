@@ -75,6 +75,7 @@ function checkWin() {
         document.querySelector("#song").innerHTML = wordList[wordIndex].media;
         document.querySelector("#image").innerHTML = wordList[wordIndex].image;
         document.querySelector("#description").innerHTML = wordList[wordIndex].description;
+        renderWord();
         wins++;
         wordIndex++;
 
@@ -120,7 +121,7 @@ document.onkeyup = function (event) {
                         guess.wordArray[index] = keyPress;
                     }
                 });
-
+                
                 checkWin();
                 renderWord();
             }
