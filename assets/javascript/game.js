@@ -84,7 +84,7 @@ function checkCorrect() {
         //End of game, make the turkeys fly
         if(wins === wordList.length){
             console.log("WINNER");
-            document.querySelector("#get-started").innerHTML = "YOU WON! Refresh to play again.";
+            document.querySelector("#get-started").innerHTML = 'YOU WON! Refresh to play again. <br> <button id="refresh" onclick="location.reload();" >Refresh</button>';
         }
     }
 }

@@ -85,3 +85,10 @@ footer {
     font-family: 'Good Times', sans-serif;
     font-size: 2em;
 }
+#refresh{
+    background-color: #630031; 
+    color: #cf4420;
+    font-size 1em;
+    font-family: 'Good Times', sans-serif;
+    margin-top: 10px;
+}
